@@ -15,7 +15,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -44,6 +46,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuario.findByClave", query = "SELECT u FROM Usuario u WHERE u.clave = :clave")
     , @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email")})
 public class Usuario implements Serializable {
+
+    @JoinColumn(name = "idRol", referencedColumnName = "idRol")
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    private Rol idRol;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -229,6 +235,14 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "co.expochick.backend.persistence.entity.Usuario[ idUsuario=" + idUsuario + " ]";
+    }
+
+    public Rol getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(Rol idRol) {
+        this.idRol = idRol;
     }
     
 }

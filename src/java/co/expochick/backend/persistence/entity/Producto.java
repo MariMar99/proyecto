@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -42,6 +43,11 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Producto.findByCalibre", query = "SELECT p FROM Producto p WHERE p.calibre = :calibre")
     , @NamedQuery(name = "Producto.findByGradoMadurez", query = "SELECT p FROM Producto p WHERE p.gradoMadurez = :gradoMadurez")})
 public class Producto implements Serializable {
+
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "foto")
+    private String foto;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -214,6 +220,14 @@ public class Producto implements Serializable {
     @Override
     public String toString() {
         return "co.expochick.backend.persistence.entity.Producto[ idProducto=" + idProducto + " ]";
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
     
 }

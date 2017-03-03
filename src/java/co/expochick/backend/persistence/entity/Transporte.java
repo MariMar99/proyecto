@@ -37,6 +37,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Transporte.findByFechaArribo", query = "SELECT t FROM Transporte t WHERE t.fechaArribo = :fechaArribo")})
 public class Transporte implements Serializable {
 
+    @Column(name = "nombreUsuarioTransportador")
+    private Integer nombreUsuarioTransportador;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -133,6 +136,14 @@ public class Transporte implements Serializable {
     @Override
     public String toString() {
         return "co.expochick.backend.persistence.entity.Transporte[ idTransporte=" + idTransporte + " ]";
+    }
+
+    public Integer getNombreUsuarioTransportador() {
+        return nombreUsuarioTransportador;
+    }
+
+    public void setNombreUsuarioTransportador(Integer nombreUsuarioTransportador) {
+        this.nombreUsuarioTransportador = nombreUsuarioTransportador;
     }
     
 }

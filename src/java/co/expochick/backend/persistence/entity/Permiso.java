@@ -43,6 +43,15 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Permiso.findByUrl", query = "SELECT p FROM Permiso p WHERE p.url = :url")})
 public class Permiso implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 2)
+    @Column(name = "tipoMenu")
+    private String tipoMenu;
+    @Size(max = 45)
+    @Column(name = "icon")
+    private String icon;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -183,6 +192,22 @@ public class Permiso implements Serializable {
     @Override
     public String toString() {
         return "co.expochick.backend.persistence.entity.Permiso[ idPermiso=" + idPermiso + " ]";
+    }
+
+    public String getTipoMenu() {
+        return tipoMenu;
+    }
+
+    public void setTipoMenu(String tipoMenu) {
+        this.tipoMenu = tipoMenu;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
     
 }
