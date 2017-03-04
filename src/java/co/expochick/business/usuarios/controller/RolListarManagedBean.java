@@ -7,6 +7,7 @@ package co.expochick.business.usuarios.controller;
 
 import co.expochick.backend.persistence.entity.Rol;
 import co.expochick.backend.persistence.facades.RolFacade;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +20,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "rolListarManagedBean")
 @RequestScoped
-public class RolListarManagedBean {
+public class RolListarManagedBean implements Serializable {
 
     @EJB private RolFacade rolfc;
     private Rol rol;

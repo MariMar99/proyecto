@@ -7,6 +7,7 @@ package co.expochick.business.usuarios.controller;
 
 import co.expochick.backend.persistence.entity.Permiso;
 import co.expochick.backend.persistence.facades.PermisoFacade;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +20,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "permisoListarManagedBean")
 @RequestScoped
-public class PermisoListarManagedBean {
+public class PermisoListarManagedBean implements Serializable {
 
     @EJB private PermisoFacade perfc;
     private Permiso permiso;

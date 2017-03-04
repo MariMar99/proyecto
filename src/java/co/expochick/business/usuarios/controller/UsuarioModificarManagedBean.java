@@ -7,6 +7,7 @@ package co.expochick.business.usuarios.controller;
 
 import co.expochick.backend.persistence.entity.Usuario;
 import co.expochick.backend.persistence.facades.UsuarioFacade;
+import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -18,7 +19,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "usuarioModificarManagedBean")
 @RequestScoped
-public class UsuarioModificarManagedBean {
+public class UsuarioModificarManagedBean implements Serializable {
 
     @EJB private UsuarioFacade usufc;
     private Usuario usuario;

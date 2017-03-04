@@ -7,6 +7,7 @@ package co.expochick.business.usuarios.controller;
 
 import co.expochick.backend.persistence.entity.Cliente;
 import co.expochick.backend.persistence.facades.ClienteFacade;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +20,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "clienteListarManagedBean")
 @RequestScoped
-public class ClienteListarManagedBean {
+public class ClienteListarManagedBean implements Serializable{
 
     @EJB private ClienteFacade clifc;
     private Cliente cliente;

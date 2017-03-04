@@ -7,6 +7,7 @@ package co.expochick.business.pedidos.controller;
 
 import co.expochick.backend.persistence.entity.Inconterm;
 import co.expochick.backend.persistence.facades.IncontermFacade;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +20,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "incontermListarManagedBean")
 @RequestScoped
-public class IncontermListarManagedBean {
+public class IncontermListarManagedBean implements Serializable {
 
     @EJB private IncontermFacade infc;
     private Inconterm inconterm;

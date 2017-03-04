@@ -7,6 +7,7 @@ package co.expochick.business.pedidos.controller;
 
 import co.expochick.backend.persistence.entity.MedidaCaja;
 import co.expochick.backend.persistence.facades.MedidaCajaFacade;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +20,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "medidaCajaRegistrarManagedBean")
 @RequestScoped
-public class MedidaCajaListarManagedBean {
+public class MedidaCajaListarManagedBean implements Serializable {
 
     @EJB private MedidaCajaFacade medCfc;
     private MedidaCaja medCaja;

@@ -7,6 +7,7 @@ package co.expochick.business.usuarios.controller;
 
 import co.expochick.backend.persistence.entity.Telefono;
 import co.expochick.backend.persistence.facades.TelefonoFacade;
+import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -18,7 +19,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "telefonoRegistrarManagedBean")
 @RequestScoped
-public class TelefonoRegistrarManagedBean {
+public class TelefonoRegistrarManagedBean implements Serializable {
 
     @EJB private TelefonoFacade telfc;
     private Telefono tel;
