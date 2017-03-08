@@ -89,7 +89,7 @@ HEADER
 ************************************
 ***********************************/
 .header{
-    background: url('../img/bg-banner02.jpg') no-repeat fixed;
+    background: url('../img/DSC_0705.JPG') no-repeat fixed;
     background-size: cover;
     min-height: 650px;
     position: relative;
@@ -449,7 +449,7 @@ TESTIMONIAL
 ***********************************/
 #testimonial
 {
-    background: url('../img/bg.jpg') no-repeat;
+/*    background: url('../img/bg.jpg') no-repeat;*/
     background-size: cover;
     min-height: 390px;
 }
